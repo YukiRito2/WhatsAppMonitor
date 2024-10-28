@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp Activity Log</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Activity Log</h1>
+    <!-- Encabezados de columna -->
+    <div class="activity-log-header">
+      <div class="log-header-item">Online</div>
+      <div class="log-header-item">Duration</div>
+      <div class="log-header-item">Offline</div>
+    </div>
+    <div id="logContainer"></div>
+    <button class="chat-button">Chat</button>
+  </div>
+
+  <script>
+    async function fetchActivityLog() {
+      try {
+        const response = await fetch('http://127.0.0.1:5000/activity_log');
+        const data = await response.json();
+
+        const logContainer = document.getElementById("logContainer");
+        logContainer.innerHTML = ""; // Limpia el contenedor
+
+        data.forEach(log => {
+          const logDiv = document.createElement("div");
+          logDiv.className = "activity-log";
+          logDiv.innerHTML = `
+            <div class="log-item">
+              <span class="time">${log.online}</span>
+              <span class="date">${log.date}</span>
+            </div>
+            <div class="log-item">
+              <span class="duration">${log.duration}</span>
+            </div>
+            <div class="log-item">
+              <span class="offline-time">${log.offline}</span>
+              <span class="date">${log.date}</span>
+            </div>
+          `;
+          logContainer.appendChild(logDiv);
+        });
+      } catch (error) {
+        console.error("Error fetching activity log:", error);
+      }
+    }
+
+    // Llama a la función cada 10 segundos para actualizar el log en tiempo real
+    setInterval(fetchActivityLog, 10000);
+    fetchActivityLog(); // Llama una vez al cargar la página
+  </script>
+</body>
+</html>
