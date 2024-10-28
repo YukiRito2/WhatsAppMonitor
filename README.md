@@ -15,12 +15,10 @@ Instala Selenium ejecutando:
 ## Configuración Inicial
 
 1. **Configura ChromeDriver**: Asegúrate de que el archivo `chromedriver.exe` esté en la carpeta `C:\SeleniumDrivers\`. Si está en otra ubicación, actualiza la ruta en el script.
-2. Para instalar Selenium, abre una terminal y ejecuta el siguiente comando:` pip install selenium`
+2. Para instalar Selenium, abre una terminal y ejecuta el siguiente comando:`pip install selenium`
 
 3. **Actualiza el Nombre del Contacto**: En el script, reemplaza `"Nombre del contacto"` con el nombre del contacto que deseas monitorear.
 
    ```python
    contact_name = "Nombre del contacto"
 
-```bash
-pip install selenium
