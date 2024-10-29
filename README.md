@@ -7,7 +7,7 @@ Este proyecto utiliza **Selenium** para monitorear el estado de conexión de un 
 ### Prerrequisitos
 1. **Python 3.x**: [Descargar Python](https://www.python.org/downloads/).
 2. **Google Chrome**: [Descargar Chrome](https://www.google.com/intl/es/chrome/).
-3. **ChromeDriver**: Descarga [ChromeDriver]([[https://sites.google.com/chromium.org/driver/). compatible con tu versión de Chrome e instálalo en `C:\SeleniumDrivers\`.
+3. **ChromeDriver**: Descarga [ChromeDriver](https://sites.google.com/chromium.org/driver/). compatible con tu versión de Chrome e instálalo en `C:\SeleniumDrivers\`.
 
 ### Instalación de Dependencias
 Instala Selenium ejecutando:
